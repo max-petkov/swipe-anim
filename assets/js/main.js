@@ -45,8 +45,8 @@ function animationSwipe() {
         x: 0,
         //   duration: 0.4,
         //   ease: "ease",
-        duration: 0.6,
-        ease: Back.easeOut.config(1),
+        duration: 0.4,
+        ease: Back.easeOut.config(0.6),
       })
       .set(hand, { willChange: "auto" });
   }
@@ -68,7 +68,6 @@ function animationSwipe() {
           else return -200;
         },
         duration: duration,
-        onStart: () => console.log(playBtn),
         onComplete: () => playBtn.remove(),
       })
       .to(
@@ -76,6 +75,7 @@ function animationSwipe() {
         {
           yPercent: -190,
           duration: duration,
+          ease: Back.easeOut.config(0.4),
           onComplete: () => {
             playBtnClone.classList.remove("is-hidden");
             playBtnClone.classList.add("is-visible");
